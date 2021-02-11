@@ -9,40 +9,49 @@
 
     <body>
 
-            <div id="containerWords" class="list-group-item list-group-item-action flex-column align-items-start text-primary">
+            <div class="list-group-item list-group-item-action flex-column align-items-start text-primary">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">Type text below</h5>
                     </div>
-                    <input type="text" id="userInput">
+                    <input id="input">
                 </div>
 
                 <div id="checkBoxRecord" class="btn-group mt-5 mb-5" data-toggle="buttons">
                     <label class="btn btn-primary active">
-                        <input type="checkbox" id="onOff"> Once checked, this will record your keyboard
+                        <input type="checkbox" id="checkedBoxRecord"> Once checked, this will show your typed message below
                     </label>
                 </div>
 
-            <div id="containerWords" class="list-group-item list-group-item-action flex-column align-items-start text-primary">
+            <div id="containerOne" class="list-group-item list-group-item-action flex-column align-items-start text-danger">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">Text will be copied here</h5>
                     </div>
-                    <p id="userInput"> </p>
+                    <p id="log" class="text-success"> </p>
                 </div>
 
 
         <script>
 
-            let checkedBoxRecord = document.getElementById('onOff');
+            let containerOne = document.getElementById('containerOne');
 
-            function saveText(checkedBoxRecord) {
-                if (checkedBoxRecord.checked === true) {
-                    let typed = document.getElementById('userInput').value;
-                } else {
-                    typedText.textContent = typed.target.value;
-                }
+            let checkedBoxRecord = document.getElementById('checkedBoxRecord');
+
+            let input = document.getElementById('input');
+            let log = document.getElementById('log');
+
+            input.addEventListener('change', updateValue);
+            containerOne.addEventListener('change', updateValue);
+
+
+            function updateValue(e) {
+                log.textContent = e.target.value;
             }
 
-            
+            function updateContainer() {   //I CANNOT FOR THe life OF ME GET THIS TO WORK!!!! IM GOING BACK TO THIS TODAY LATER!!
+                if(checkedBoxRecord.checked == false) {
+                    containerOne.style.display='hidden';
+                }
+            }
 
         </script>
     </body>
