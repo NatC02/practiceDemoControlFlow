@@ -11,30 +11,38 @@
 
             <div id="containerWords" class="list-group-item list-group-item-action flex-column align-items-start text-primary">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Heading</h5>
+                        <h5 class="mb-1">Type text below</h5>
                     </div>
-                    <p class="mb-1">Paragraph</p>
-                    <small>paragraph footer</small>
+                    <input type="text" id="userInput">
                 </div>
 
-                <div class="btn-group" data-toggle="buttons">
+                <div id="checkBoxRecord" class="btn-group mt-5 mb-5" data-toggle="buttons">
                     <label class="btn btn-primary active">
-                        <input type="checkbox" name="" id="" checked autocomplete="off">
+                        <input type="checkbox" id="onOff"> Once checked, this will record your keyboard
                     </label>
                 </div>
 
-            <div id="containerWords" class="list-group-item list-group-item-action flex-column align-items-start text-success">
+            <div id="containerWords" class="list-group-item list-group-item-action flex-column align-items-start text-primary">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1"></h5>
+                        <h5 class="mb-1">Text will be copied here</h5>
                     </div>
-                    <p class="mb-1">Paragraph</p>
-                    <small>paragraph footer</small>
+                    <p id="userInput"> </p>
                 </div>
-            </div>
 
 
-        <script src="">
+        <script>
 
+            let checkedBoxRecord = document.getElementById('onOff');
+
+            function saveText(checkedBoxRecord) {
+                if (checkedBoxRecord.checked === true) {
+                    let typed = document.getElementById('userInput').value;
+                } else {
+                    typedText.textContent = typed.target.value;
+                }
+            }
+
+            
 
         </script>
     </body>
