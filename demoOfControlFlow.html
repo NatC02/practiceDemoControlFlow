@@ -16,11 +16,19 @@
                     <input id="input"> <p id="log" class="text-success"> </p>
                 </div>
 
+                <div id="divMeme">
+                </div>
+
+                <div id="divMemeTwo">
+                </div>
+
                 <div id="saveCheckBox" class="btn-group mt-5 mb-5" data-toggle="buttons">
                     <label class="btn btn-primary active">
                         <input type="checkbox" id="checkedBoxRecord"> Text will forever dissapear if you click here and will not come backuntil you reload
                     </label>
                 </div>
+
+                
 
             <div id="containerOne" class="list-group-item list-group-item-action flex-column align-items-start text-danger">
                     <div class="d-flex w-100 justify-content-between">
@@ -28,6 +36,9 @@
                     </div>
                     <p id="log" class="text-success"> </p>
                     <img src="/meme.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}">
+                </div>
+
+                
 
         <script>
 
@@ -37,19 +48,24 @@
             input.addEventListener('change', updateValue);
 
             function updateValue(e) {
-                log.textContent = e.target.value;
-            }
-        
-            switch(input) {
-                case "I don't like memes":
-                    container.style.display = "none;"
-                break;
 
-                case "I like memes":
-                    document.getElementById('container').appendChild(image);
-                break;
-                default:
-                    
+                log.textContent = e.target.value;
+
+                switch(log.textContent) {
+                case "meme 1":
+                    let img = document.createElement("img");
+                    img.src = "noice.png";
+                    let src = document.getElementById("divMeme");                
+                    src.appendChild(img);
+                    break;
+                
+                case "meme 2":
+                    let imgTwo = document.createElement("img");
+                    img.src = "bettermeme.jpg";
+                    let srcTwo = document.getElementById("divMemeTwo");                
+                    srcTwo.appendChild(imgTwo);
+                    break;
+            }
 
             }
 
