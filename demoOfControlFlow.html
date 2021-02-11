@@ -36,15 +36,20 @@
 
             input.addEventListener('change', updateValue);
 
+            function updateValue(e) {
+                log.textContent = e.target.value;
+            }
+        
             switch(input) {
                 case "I don't like memes":
-                    body.style.display = "none;"
+                    container.style.display = "none;"
                 break;
 
                 case "I like memes":
-
+                    document.getElementById('container').appendChild(image);
                 break;
                 default:
+                    
 
             }
 
@@ -61,9 +66,7 @@
                 }
             }
 
-            function updateValue(e) {
-                log.textContent = e.target.value;
-            }
+            
 
         </script>
     </body>
