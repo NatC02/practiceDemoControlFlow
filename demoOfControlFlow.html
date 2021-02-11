@@ -13,44 +13,56 @@
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">Type text below</h5>
                     </div>
-                    <input id="input">
+                    <input id="input"> <p id="log" class="text-success"> </p>
                 </div>
 
-                <div id="checkBoxRecord" class="btn-group mt-5 mb-5" data-toggle="buttons">
+                <div id="saveCheckBox" class="btn-group mt-5 mb-5" data-toggle="buttons">
                     <label class="btn btn-primary active">
-                        <input type="checkbox" id="checkedBoxRecord"> Once checked, this will show your typed message below
+                        <input type="checkbox" id="checkedBoxRecord"> Text will forever dissapear if you click here and will not come backuntil you reload
                     </label>
                 </div>
 
             <div id="containerOne" class="list-group-item list-group-item-action flex-column align-items-start text-danger">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Text will be copied here</h5>
+                        <h5 class="mb-1">This text will magically dissapear, WOW!!</h5>
                     </div>
                     <p id="log" class="text-success"> </p>
-                </div>
-
+                    <img src="/meme.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}">
 
         <script>
-
-            let containerOne = document.getElementById('containerOne');
-
-            let checkedBoxRecord = document.getElementById('checkedBoxRecord');
 
             let input = document.getElementById('input');
             let log = document.getElementById('log');
 
             input.addEventListener('change', updateValue);
-            containerOne.addEventListener('change', updateValue);
 
+            switch(input) {
+                case "I don't like memes":
+                    body.style.display = "none;"
+                break;
+
+                case "I like memes":
+
+                break;
+                default:
+
+            }
+
+            saveCheckBox.onclick = function() {   
+                
+                let containerOne = document.getElementById('containerOne');
+
+                const saveCheckBox = document.getElementById('saveCheckBox');
+
+                if(saveCheckBox.checked == false) {
+                    containerOne.style.display="block";
+                } else {
+                    containerOne.style.display="none";
+                }
+            }
 
             function updateValue(e) {
                 log.textContent = e.target.value;
-            }
-
-            function updateContainer() {   //I CANNOT FOR THe life OF ME GET THIS TO WORK!!!! IM GOING BACK TO THIS TODAY LATER!!
-                if(checkedBoxRecord.checked == false) {
-                    containerOne.style.display='hidden';
-                }
             }
 
         </script>
