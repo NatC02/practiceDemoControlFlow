@@ -29,31 +29,46 @@
                     <p id="log" class="text-success"> </p>
                 </div>
 
+                <div id="containerTwo" class="list-group-item list-group-item-action flex-column align-items-start text-danger">
+                    <p id="noLog" class="text-success"> </p>
+                </div>
+
 
         <script>
 
             let containerOne = document.getElementById('containerOne');
 
+            let containerTwo = document.getElementById('containerTwo');
+
             let checkedBoxRecord = document.getElementById('checkedBoxRecord');
 
             let input = document.getElementById('input');
             let log = document.getElementById('log');
+            let noLog = document.getElementById('noLog')
 
             input.addEventListener('change', updateValue);
             containerOne.addEventListener('change', updateValue);
 
+
+
+            if (!document.getElementById('log').focus()) {
+                noLog.textContent = "Nothing was typed"
+                noLog.style.color = red;
+            } else {
+                noLogtext.textContent = "";
+            }
 
             function updateValue(e) {
                 log.textContent = e.target.value;
             }
 
             function updateContainer() {
-                if(checkedBoxRecord.checked == false) {
+                if(checkedBoxRecord.checked === false) {
                     containerOne.style.display='hidden';
                 }
             }
 
-            /*added this file in commit"
+            /*added this file in commit" */
 
         </script>
     </body>
